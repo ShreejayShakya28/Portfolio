@@ -10,8 +10,8 @@ app.use(cors()); // allows frontend (React or browser) to call API
 // Minimal API route
 app.get("/description", (req, res) => {
   res.json({
-    paragraph: "This is a simple description sent from the backend API.",
-    image: "https://picsum.photos/400/200" // random placeholder image
+    paragraph: "Hello From The Backend",
+    // image: "https://picsum.photos/400/200" // random placeholder image
   });
 });
 
