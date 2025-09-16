@@ -1,29 +1,34 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import './App.css'
+import React, { useState } from 'react';
+import './App.css';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
 
 function App() {
-  const [data, setData] = useState(null);
+  const [activeSection, setActiveSection] = useState('Home');
 
-  useEffect(() => {
-    axios.get("http://localhost:5000/description")
-      .then(res => setData(res.data))
-      .catch(err => console.error(err));
-  }, []);
+  const renderSection = () => {
+    switch (activeSection) {
+      case 'Home':
+        return <Home />;
+      case 'Projects':
+        return <Projects />;
+      case 'Contact':
+        return <Contact />;
+      default:
+        return <Home />;
+    }
+  };
 
   return (
-    <div className="app-container">
-      {data ? (
-        <div>
-          <p>{data.paragraph}</p>
-          {/* Uncomment below if you enable image in backend */}
-          {/* <img src={data.image} alt="From backend" /> */}
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )}
+    <div className="App">
+      <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
+      <main className="main-content">
+        {renderSection()}
+      </main>
     </div>
   );
 }
 
-export default App
+export default App;

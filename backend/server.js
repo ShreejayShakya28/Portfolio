@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-
+const path = require('path')
 const app = express();
 const PORT = 5000;
 
@@ -14,6 +14,11 @@ app.get("/description", (req, res) => {
     // image: "https://picsum.photos/400/200" // random placeholder image
   });
 });
+
+
+app.get("/", (req,res) => {
+  res.sendFile(path.join(__dirname,'/index.html'))
+})
 
 // Start server
 app.listen(PORT, () => {
