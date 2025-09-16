@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Navbar = ({ activeSection, setActiveSection }) => {
+const Navbar = ({ activeSection, scrollToSection }) => {
   const navItems = ['Home', 'Projects', 'Contact'];
   
   return (
@@ -10,7 +10,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
           <button
             key={item}
             className={`nav-item ${activeSection === item ? 'active' : ''}`}
-            onClick={() => setActiveSection(item)}
+            onClick={() => scrollToSection(item)}
           >
             {item}
           </button>

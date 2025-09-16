@@ -2,10 +2,10 @@ import React from 'react';
 
 const Projects = () => {
   return (
-    <div className="section">
+    <section id="projects" className="section">
       <h1>Projects</h1>
       <p>Projects content coming soon...</p>
-    </div>
+    </section>
   );
 };
 
