@@ -1,6 +1,6 @@
 import React from 'react';
 import profileImage from '../assets/images/lena.png';
-
+import '../styles/Home.css'
 const Home = () => {
   return (
     <section id="home" className="home-section">

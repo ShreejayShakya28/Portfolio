@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import '../styles/Project.css'
 const Projects = () => {
   const [currentProject, setCurrentProject] = useState(0);
 
