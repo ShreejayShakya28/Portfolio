@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Navbar.css'
 const Navbar = ({ activeSection, scrollToSection }) => {
-  const navItems = ['Home', 'Projects', 'Contact'];
+  const navItems = ['Home', 'Projects', 'Skills', 'Contact'];
   
   return (
     <nav className="navbar">

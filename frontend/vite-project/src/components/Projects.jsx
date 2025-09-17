@@ -1,36 +1,44 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Project.css'
+
 const Projects = () => {
   const [currentProject, setCurrentProject] = useState(0);
 
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution built with React and Node.js. Features include user authentication, payment integration, inventory management, and real-time order tracking. Implemented responsive design and optimized for performance.",
+      title: "Graphical Content Retention With Editable Charts and Layout Retention",
+      description: "An advanced document processing tool integrating Detectron2 with Faster R-CNN and PaddleOCR for structured content extraction, text extraction with high accuracy using PaddleOCR, while custom algorithms like k-means clustering, contour analysis, and spatial reasoning for feature extraction from charts and graphs.",
       image: "https://via.placeholder.com/200x150/2b6cb0/ffffff?text=Project+1",
-      link: "/project/1"
+      link: "Projects/GraphicalContent.html"
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "Collaborative project management tool with real-time updates, drag-and-drop functionality, team collaboration features, and advanced filtering options. Built using React, Redux, and Socket.io for seamless user experience.",
+      title: "A Dual Transformer Pipeline with Conformer-Based Speech Recognition and Decoder-Only Language Modeling",
+      description: "A modular speech AI system decoupling ASR and LLM components, using a Conformer-based Transformer with ResMHA for transcription and a lightweight decoder-only LLM for generating contextually relevant responses.",
       image: "https://via.placeholder.com/200x150/4a5568/ffffff?text=Project+2",
-      link: "/project/2"
+      link: "Projects/Conformer.html"
     },
     {
       id: 3,
-      title: "Weather Dashboard",
-      description: "Interactive weather application providing real-time weather data, forecasts, and location-based services. Integrated multiple APIs and implemented data visualization with charts and maps for comprehensive weather insights.",
+      title: "Custom Website",
+      description: "A full-stack portfolio website built with React frontend and MERN backend. Features include dynamic project showcases, contact form integration, responsive design, and optimized performance. Implements secure data handling, interactive UI components, and a scalable architecture for seamless user experience.",
       image: "https://via.placeholder.com/200x150/2d3748/ffffff?text=Project+3",
-      link: "/project/3"
+      link: "Projects/Portfolio.html"
     },
     {
       id: 4,
-      title: "Social Media App",
+      title: "Sathi : Social Media App",
       description: "Modern social networking platform with user profiles, post sharing, real-time messaging, and content discovery features. Implemented with React Native for mobile compatibility and Node.js backend.",
       image: "https://via.placeholder.com/200x150/1a202c/ffffff?text=Project+4",
-      link: "/project/4"
+      link: "Projects/Example.html"
+    },
+    {
+      id: 5,
+      title: "CMMS (Class Marking and Management System",
+      description: "CMMS is a spreadsheet-style desktop application allowing users to manage data via rows and columns, perform calculations, and save/load files built using C++ and Qt Framework",
+      image: "https://via.placeholder.com/200x150/1a202c/ffffff?text=Project+4",
+      link: "Projects/Example.html"
     }
   ];
 
@@ -59,6 +67,10 @@ const Projects = () => {
     setCurrentProject((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
   };
 
+  const handleViewMore = () => {
+    window.location.href = projects[currentProject].link;
+  };
+
   return (
     <section id="projects" className="projects-section">
       <div className="projects-container">
@@ -74,7 +86,7 @@ const Projects = () => {
               <div className="text-content">
                 <h2 className="project-title">{projects[currentProject].title}</h2>
                 <p className="project-description">{projects[currentProject].description}</p>
-                <button className="view-more-btn">
+                <button className="view-more-btn" onClick={handleViewMore}>
                   View More →
                 </button>
               </div>
