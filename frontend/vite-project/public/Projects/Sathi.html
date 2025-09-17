@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Sathi</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
@@ -48,10 +48,8 @@
             font-size: 1.2rem;
             line-height: 1.7;
             color: #4a5568;
-            margin-bottom: 3rem;
         }
-        
-        /* Carousel Styles */
+                /* Carousel Styles */
         .carousel-container {
             position: relative;
             max-width: 100%;
@@ -190,26 +188,52 @@
     </nav>
     
     <div class="content">
-        <h1>Graphical Content Recognition with Editable Charts and Layout Retention</h1>
-        <p>The task of extracting and processing structured content from textbooks and documents containing textual and visual elements such as charts and graphs requires a advanced tool capable of detection, localization, processing and reconstruction. Although tools utilizing modern OCR technologies can extract textual contents with high accuracy and speed, there is a lack of a tool that can allow for processing and editing of the detected visual elements. To address this challenge, we present a serial pipelining structure that integrates Detectron2 with Faster R-CNN model, an advanced pre trained object detection model to extract document content and visual features alongside PaddleOCR, a state of art OCR model. In our system, all the textual content is extracted using PaddleOCR while custom algorithms like k-means clustering, contour analysis and spatial reasoning allows for complete feature extraction like bar heights, pie slices and reconstruction of visual elements. Our key achievements includes techniques to develop customized dataset for training, adaptive label mappings to dynamically associate extracted data with its corresponding visual component and reconstruction techniques. This tool advances document digitization by automatic extraction, interactive GUI to edit the extracted visual elements and output generation while retaining original document layout.</p>
-        
+         <h1>Introduction</h1>
+    <p>
+        Sathi is a minimalistic family and friend focused social network designed to prioritize meaningful 
+        connections by focusing exclusively on friends, family and people near and dear to users. Users 
+        share updates, photos, views and comments without any algorithmic feed or irrelevant content like 
+        reels, videos, influencers in their feed. Built to foster genuine and relevant interactions without 
+        wasting time in irrelevant contents.
+    </p>
+
+    <h1>Features</h1>
+    <ul>
+        <li><strong>Responsive Design:</strong> Optimized for both desktop and mobile devices.</li>
+        <li><strong>Privacy-first:</strong> Content visible only to approved connections.</li>
+        <li><strong>Minimalist Design:</strong> Focus on core features (posts, like, comments).</li>
+        <li><strong>Secure Backend and Authentication:</strong> Secure registration/login with Django's built-in authentication.</li>
+        <li><strong>Secure Database:</strong> On top of Django's built-in migrations PostgreSQL database is used for storing data.</li>
+    </ul>
+
+    <h1>Technological Stack</h1>
+    <ul>
+        <li><strong>Backend:</strong> Django (Python)</li>
+        <li><strong>Frontend:</strong> HTML, CSS, Javascript, Bootstrap5</li>
+        <li><strong>Database:</strong> PostgreSQL (hosted on Supabase)</li>
+        <li><strong>Deployment:</strong> Render</li>
+    </ul>
+
+    <h1>Frontend Implementation</h1>
+    <p>
+        Responsive Design: Usage of Bootstrap5 and CSS enables the site to be responsive according to screen 
+        size and works on all kinds of devices including desktop and mobile.
+    </p>
+
+    <h1>Backend Implementation</h1>
+    <p>
+        Django is used to implement the backend to connect with the database, make changes, authorize users, etc. 
+        PostgreSQL is chosen for its scalability, reliability, and easier support for website hosting. The database 
+        is hosted on Supabase, which provides easy database management and real-time capabilities.
+    </p>
         <div class="carousel-container">
             <div class="carousel-wrapper">
                 <div class="carousel-track" id="carouselTrack">
                     <div class="carousel-slide">
-                        <img src="/images/G/Input Image.png" alt="Project Image 1" />
+                        <img src="/images/G/sathi1.png" alt="Project Image 1" />
                     </div>
                     <div class="carousel-slide">
-                        <img src="/images/G/Layout Inference.png" alt="Project Image 2" />
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="/images/G/Layout Reconstruct.png" alt="Project Image 3" />
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="/images/G/Website Bar.png" alt="Project Image 4" />
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="/images/G/Website Pie.png" alt="Project Image 5" />
+                        <img src="/images/G/sathi2.png" alt="Project Image 2" />
                     </div>
                 </div>
                 
@@ -217,24 +241,15 @@
                 <button class="carousel-button next" id="nextBtn">›</button>
                 
                 <div class="image-counter">
-                    <span id="currentImage">1</span> / <span id="totalImages">5</span>
+                    <span id="currentImage">1</span> / <span id="totalImages">2</span>
                 </div>
             </div>
             
             <div class="carousel-indicators" id="indicators">
                 <div class="indicator active" data-slide="0"></div>
                 <div class="indicator" data-slide="1"></div>
-                <div class="indicator" data-slide="2"></div>
-                <div class="indicator" data-slide="3"></div>
-                <div class="indicator" data-slide="4"></div>
             </div>
         </div>
-    </div>
-
-    <div class="content">
-        <p>
-            We suceeded in creating a document processing tool that can detect graphical elements segment and extract features independently for separate processing. We trained Detectron2 (Object Detection model developed by Facebook) and fine tuned paddleOCR to extract features the page. The features were mapped and recorded for reconstruction and allow editing. This concept has recently been seen by different document processing and web browsers. This concept are best implemented by graphical based transformer models which are capable of processing most kind of graphs and are not limited by dataset or the training procedure requiring massive annotation.
-        </p>
     </div>
 
     <script>
@@ -304,5 +319,6 @@
             new Carousel();
         });
     </script>
+    </div>
 </body>
 </html>

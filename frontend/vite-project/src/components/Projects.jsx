@@ -9,36 +9,36 @@ const Projects = () => {
       id: 1,
       title: "Graphical Content Retention With Editable Charts and Layout Retention",
       description: "An advanced document processing tool integrating Detectron2 with Faster R-CNN and PaddleOCR for structured content extraction, text extraction with high accuracy using PaddleOCR, while custom algorithms like k-means clustering, contour analysis, and spatial reasoning for feature extraction from charts and graphs.",
-      image: "https://via.placeholder.com/200x150/2b6cb0/ffffff?text=Project+1",
+      image: "public/images/icon/graph.jpg",
       link: "Projects/GraphicalContent.html"
     },
     {
       id: 2,
       title: "A Dual Transformer Pipeline with Conformer-Based Speech Recognition and Decoder-Only Language Modeling",
       description: "A modular speech AI system decoupling ASR and LLM components, using a Conformer-based Transformer with ResMHA for transcription and a lightweight decoder-only LLM for generating contextually relevant responses.",
-      image: "https://via.placeholder.com/200x150/4a5568/ffffff?text=Project+2",
+      image: "public/images/icon/audio.png",
       link: "Projects/Conformer.html"
     },
     {
       id: 3,
-      title: "Custom Website",
-      description: "A full-stack portfolio website built with React frontend and MERN backend. Features include dynamic project showcases, contact form integration, responsive design, and optimized performance. Implements secure data handling, interactive UI components, and a scalable architecture for seamless user experience.",
-      image: "https://via.placeholder.com/200x150/2d3748/ffffff?text=Project+3",
-      link: "Projects/Portfolio.html"
+      title: "CMMS (Class Marking and Management System",
+      description: "CMMS is a spreadsheet-style desktop application allowing users to manage data via rows and columns, perform calculations, and save/load files built using C++ and Qt Framework",
+      image: "public/images/icon/cmms.jpg",
+      link: "Projects/CMMS.html"
     },
     {
       id: 4,
       title: "Sathi : Social Media App",
-      description: "Modern social networking platform with user profiles, post sharing, real-time messaging, and content discovery features. Implemented with React Native for mobile compatibility and Node.js backend.",
-      image: "https://via.placeholder.com/200x150/1a202c/ffffff?text=Project+4",
-      link: "Projects/Example.html"
+      description: "Sathi is a minimalistic family- and friend-focused social network prioritizing meaningful connections. Users share updates, photos, views, and comments within a trusted circle.",
+      image: "public/images/icon/sathi.jpg",
+      link: "Projects/Sathi.html"
     },
     {
       id: 5,
-      title: "CMMS (Class Marking and Management System",
-      description: "CMMS is a spreadsheet-style desktop application allowing users to manage data via rows and columns, perform calculations, and save/load files built using C++ and Qt Framework",
-      image: "https://via.placeholder.com/200x150/1a202c/ffffff?text=Project+4",
-      link: "Projects/Example.html"
+      title: "Custom Website",
+      description: "A full-stack portfolio website built with React frontend and MERN backend. Features include dynamic project showcases, contact form integration, responsive design, and optimized performance. Implements secure data handling, interactive UI components, and a scalable architecture for seamless user experience.",
+      image: "public/images/icon/q.jpg",
+      link: "Projects/Portfolio.html"
     }
   ];
 
