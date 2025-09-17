@@ -34,16 +34,21 @@ const Skills = () => {
       description: "Version control, branching strategies, and collaborative development"
     },
     {
-      name: "Docker",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-      description: "Containerization, deployment, and microservices architecture"
+    name: "Matplotlib",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg",
+    description: "Data visualization and plotting in Python"
     },
     {
-      name: "TypeScript",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-      description: "Type-safe JavaScript, interfaces, and advanced typing patterns"
+    name: "PyTorch",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg",
+    description: "Deep learning framework for building and training neural networks"
+    },
+    {
+    name: "MLBB",
+    icon: "images/icon/ml.png",
+    description: "Decent fill player having reached glory once Season 38"
     }
-  ];
+];
 
   return (
     <section id="skills" className="skills-section">
