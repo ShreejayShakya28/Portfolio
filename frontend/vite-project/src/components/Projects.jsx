@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../styles/Project.css'
 
 import graph from '../assets/icons/graph.jpg';
@@ -9,6 +9,9 @@ import cmms from '../assets/icons/cmms.jpg';
 
 const Projects = () => {
   const [currentProject, setCurrentProject] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  const cardRef = useRef(null);
 
   const projects = [
     {
@@ -47,6 +50,29 @@ const Projects = () => {
       link: "Projects/Portfolio.html"
     }
   ];
+
+  // Minimum swipe distance (in px)
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      nextProject();
+    } else if (isRightSwipe) {
+      prevProject();
+    }
+  };
 
   useEffect(() => {
     const handleKeyPress = (event) => {
@@ -87,7 +113,13 @@ const Projects = () => {
             ‹
           </button>
           
-          <div className="project-card">
+          <div 
+            className="project-card"
+            ref={cardRef}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
             <div className="card-content">
               <div className="text-content">
                 <h2 className="project-title">{projects[currentProject].title}</h2>
@@ -121,7 +153,10 @@ const Projects = () => {
           ))}
         </div>
         
-        <p className="navigation-hint">Use ← → arrow keys to navigate</p>
+        <div className="navigation-hints">
+          <p className="navigation-hint desktop-hint">Use ← → arrow keys to navigate</p>
+          <p className="navigation-hint mobile-hint">Swipe left or right to navigate</p>
+        </div>
       </div>
     </section>
   );
