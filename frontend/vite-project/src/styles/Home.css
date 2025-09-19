@@ -76,3 +76,148 @@
   height: 100%;
   object-fit: cover;
 }
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+  .hero-container {
+    padding: 2.5rem;
+    height: 35vh;
+  }
+  
+  .hero-content {
+    gap: 2.5rem;
+  }
+  
+  .text-section h1 {
+    font-size: 2.2rem;
+  }
+  
+  .text-section h2 {
+    font-size: 1.2rem;
+  }
+  
+  .text-section p {
+    font-size: 1rem;
+  }
+  
+  .profile-circle {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .home-section {
+    padding: 1rem;
+    min-height: calc(100vh - 120px);
+  }
+  
+  .hero-container {
+    padding: 2rem;
+    height: auto;
+    min-height: 400px;
+  }
+  
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    height: auto;
+  }
+  
+  .text-section {
+    order: 2;
+    text-align: center;
+  }
+  
+  .image-section {
+    order: 1;
+  }
+  
+  .text-section h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .text-section h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .text-section p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .profile-circle {
+    width: 150px;
+    height: 150px;
+    border: 3px solid #e2e8f0;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .home-section {
+    padding: 0.5rem;
+    min-height: calc(100vh - 140px);
+  }
+  
+  .hero-container {
+    padding: 1.5rem;
+    min-height: 350px;
+    border-radius: 12px;
+  }
+  
+  .hero-content {
+    gap: 1.5rem;
+  }
+  
+  .text-section h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+  
+  .text-section h2 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .text-section p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .profile-circle {
+    width: 120px;
+    height: 120px;
+    border: 2px solid #e2e8f0;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 320px) {
+  .hero-container {
+    padding: 1rem;
+    min-height: 300px;
+  }
+  
+  .text-section h1 {
+    font-size: 1.3rem;
+  }
+  
+  .text-section h2 {
+    font-size: 0.9rem;
+  }
+  
+  .text-section p {
+    font-size: 0.85rem;
+  }
+  
+  .profile-circle {
+    width: 100px;
+    height: 100px;
+  }
+}
