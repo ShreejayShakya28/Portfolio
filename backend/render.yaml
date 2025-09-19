@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: portfolio-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false  # This should be set manually in Render dashboard
+      - key: FRONTEND_URL
+        value: https://your-frontend-domain.com  # Update with your actual frontend URL

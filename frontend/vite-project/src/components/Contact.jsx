@@ -11,6 +11,9 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
 
+  // Replace this with your deployed backend URL
+  const API_BASE_URL = 'http://localhost:5000';
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFeedback(prev => ({
@@ -22,26 +25,35 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitMessage('');
     
     try {
-      // TODO: Replace with your actual API endpoint
-      // const response = await fetch('/api/feedback', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify(feedback),
-      // });
+      const response = await fetch(`${API_BASE_URL}/api/feedback`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(feedback),
+      });
       
-      // Simulate API call for now
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const data = await response.json();
       
-      setSubmitMessage('Thank you for your feedback! I\'ll get back to you soon.');
-      setFeedback({ name: '', email: '', message: '' });
+      if (response.ok && data.success) {
+        setSubmitMessage('Thank you for your feedback! I\'ll get back to you soon.');
+        setFeedback({ name: '', email: '', message: '' });
+      } else {
+        setSubmitMessage(data.message || 'Sorry, there was an error sending your feedback. Please try again.');
+      }
     } catch (error) {
-      setSubmitMessage('Sorry, there was an error sending your feedback. Please try again.');
+      console.error('Error submitting feedback:', error);
+      setSubmitMessage('Sorry, there was an error sending your feedback. Please check your connection and try again.');
     } finally {
       setIsSubmitting(false);
+      
+      // Clear message after 5 seconds
+      setTimeout(() => {
+        setSubmitMessage('');
+      }, 5000);
     }
   };
 
@@ -58,11 +70,9 @@ const Contact = () => {
             
             <div className="contact-details">
               <div className="contact-item">
-                {/* <span className="contact-label"></span> */}
                 <span className="contact-value">Shreejay Shakya</span>
               </div>
               <div className="contact-item">
-                {/* <span className="contact-label"></span> */}
                 <span className="contact-value">shreejayshakya28@gmail.com</span>
               </div>
             </div>
@@ -82,6 +92,7 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   placeholder="Enter your name"
+                  disabled={isSubmitting}
                 />
               </div>
               
@@ -95,6 +106,7 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   placeholder="Enter your email"
+                  disabled={isSubmitting}
                 />
               </div>
               
@@ -108,20 +120,26 @@ const Contact = () => {
                   required
                   rows="5"
                   placeholder="Tell me what you think..."
+                  disabled={isSubmitting}
                 />
               </div>
               
               <button 
                 type="submit" 
-                className="submit-btn"
+                className={`submit-btn ${isSubmitting ? 'submitting' : ''}`}
                 disabled={isSubmitting}
               >
-                {isSubmitting ? 'Sending...' : 'Send Feedback'}
+                {isSubmitting ? (
+                  <>
+                    <span className="spinner"></span>
+                    Sending...
+                  </>
+                ) : 'Send Feedback'}
               </button>
             </form>
             
             {submitMessage && (
-              <div className={`submit-message ${submitMessage.includes('error') ? 'error' : 'success'}`}>
+              <div className={`submit-message ${submitMessage.includes('error') || submitMessage.includes('Sorry') ? 'error' : 'success'}`}>
                 {submitMessage}
               </div>
             )}
