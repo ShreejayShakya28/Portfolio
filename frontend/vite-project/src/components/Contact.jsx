@@ -12,7 +12,10 @@ const Contact = () => {
   const [submitMessage, setSubmitMessage] = useState('');
 
   // Replace this with your deployed backend URL
-  const API_BASE_URL = 'http://localhost:5000';
+
+  const API_BASE_URL = import.meta.env.PROD 
+  ? 'https://your-render-app.onrender.com'  
+  : 'http://localhost:5000';
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
